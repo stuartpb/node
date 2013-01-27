@@ -47,7 +47,7 @@ Used to handle binary data. See the [buffer system documentation][].
 * {Function}
 
 To require modules. See the [module system documentation][].  `require` isn't actually a
-global but rather local to each module.
+global but rather local to each module; see the documentation for [module.require][].
 
 ### require.resolve()
 
@@ -70,6 +70,12 @@ Instruct `require` on how to handle certain file extensions.
 Process files with the extension `.sjs` as `.js`:
 
     require.extensions['.sjs'] = require.extensions['.js'];
+
+### require.main
+
+The [`module` object][] of the script being run by Node (or `undefined` if
+Node was started in the [REPL][]). See the section of the [module system documentation][]
+on [accessing the main module][].
 
 ## __filename
 
@@ -167,6 +173,10 @@ The timer functions are global variables. See the [timers][] section.
 
 [buffer system documentation]: buffer.html#buffer_buffer
 [module system documentation]: modules.html#modules_modules
+[module.require]: modules.html#modules_module_require_id
+[`module` object]: modules.html#modules_the_module_object
+[accessing the main object]: modules.html#modules_accessing_the_main_object
 [process object]: process.html#process_process
+[REPL]: repl.html
 [stdio]: stdio.html
 [timers]: timers.html
